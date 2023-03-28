@@ -5,9 +5,9 @@ clientes = []
 trabajos = []
 
 def ingresar_empleado():
-    nombre = input("Ingrese el nombre del empleado: ")
-    especialidad = input("Ingrese la especialidad del empleado: ")
-    sexo = input("Ingrese el sexo del empleado: ")
+    nombre = input("Ingrese nombre del empleado: ")
+    especialidad = input("Ingrese especialidad del empleado: ")
+    sexo = input("Ingrese sexo del empleado: ")
 
     empleado = {
         "nombre": nombre,
@@ -19,7 +19,7 @@ def ingresar_empleado():
     print("Empleado ingresado exitosamente\n")
 
 def borrar_empleado():
-    nombre = input("Ingrese el nombre del empleado que desea borrar: ")
+    nombre = input("Ingrese nombre del empleado a borrar: ")
     
     for empleado in empleados:
         if empleado["nombre"] == nombre:
@@ -42,9 +42,9 @@ def ver_empleados():
 #-------------------------------------Clientes----------------------------------
 
 def ingresar_cliente():
-    nombre = input("Ingrese el nombre del cliente: ")
-    cedula = input("Ingrese la cédula del cliente: ")
-    telefono = input("Ingrese el teléfono del cliente: ")
+    nombre = input("Ingrese nombre del cliente: ")
+    cedula = input("Ingrese cédula del cliente: ")
+    telefono = input("Ingrese teléfono del cliente: ")
 
     cliente = {
         "nombre": nombre,
@@ -55,7 +55,7 @@ def ingresar_cliente():
     print("Cliente ingresado exitosamente\n")
 
 def modificar_cliente():
-    cedula = input("Ingrese la cédula del cliente que desea modificar: ")
+    cedula = input("Ingrese cédula del cliente a modificar: ")
     
     for cliente in clientes:
         if cliente["cedula"] == cedula:
@@ -77,7 +77,7 @@ def ver_cliente():
     if len(clientes) == 0:
         print("No hay clientes ingresados.")
     else:
-        cedula = input("Ingrese la cédula del cliente que desea ver: ")
+        cedula = input("Ingrese cédula del cliente que desea ver: ")
         
         for cliente in clientes:
             if cliente["cedula"] == cedula:
@@ -112,7 +112,7 @@ def brindar_servicio():
     
     #Obtenemos los datos del servicio y del empleado
     servicio = input("Ingrese el tipo de servicio: ")
-    especialidad = input("Ingrese la especialidad del empleado que necesita (plomería, electricidad, etc.): ")
+    especialidad = input("Ingrese la especialidad que necesita(técnico, mecánico, plomero, electricista, etc): ")
     empleados_disponibles = [e for e in empleados if e['especialidad'] == especialidad]
     if not empleados_disponibles:
         print("No hay empleados disponibles con la especialidad requerida.\n")
@@ -124,7 +124,7 @@ def brindar_servicio():
         print("\n")
     empleado = None
     while not empleado:
-        nombre_empleado = input("Ingrese el nombre del empleado que desea contratar: ")
+        nombre_empleado = input("Ingrese el nombre del empleado a contratar: ")
         for e in empleados_disponibles:
             if e['nombre'] == nombre_empleado:
                 empleado = e
