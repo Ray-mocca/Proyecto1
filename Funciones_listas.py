@@ -112,7 +112,7 @@ def brindar_servicio():
     
     #Obtenemos los datos del servicio y del empleado
     servicio = input("Ingrese el tipo de servicio: ")
-    especialidad = input("Ingrese la especialidad que necesita(técnico, mecánico, plomero, electricista, etc): ")
+    especialidad = input("Ingrese la especialidad que necesita: ")
     empleados_disponibles = [e for e in empleados if e['especialidad'] == especialidad]
     if not empleados_disponibles:
         print("No hay empleados disponibles con la especialidad requerida.\n")
